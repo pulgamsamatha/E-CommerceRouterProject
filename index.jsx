@@ -1,42 +1,35 @@
-import { Link } from 'react-router-dom'
+import Header from '../Header'
 import './index.css'
 
-const Header = () => (
-  <nav className="nav-header">
-    <div className="nav-content">
-      <img
-        className="website-logo"
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-        alt="website logo"
-      />
-      <ul className="nav-menu">
-        <li>
-          <Link to="/Home" className="nav-link">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/products" className="nav-link">
-            Products
-          </Link>
-        </li>
-        <li>
-          <Link to="/cart" className="nav-link">
-            Cart
-          </Link>
-        </li>
-      </ul>
-      <button type="button" className="logout-desktop-btn">
-        Logout
-      </button>
-      <button type="button" className="logout-mobile-btn">
+const Home = () => (
+  <>
+    <Header />
+    <div className="home-container">
+      <div className="home-content">
+        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
         <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
-          alt="logout icon"
-          className="logout-icon"
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+          alt="dresses to be noticed"
+          className="home-mobile-img"
         />
-      </button>
+        <p className="home-description">
+          Fashion is part of the daily air and it does not quite help that it
+          changes all the time. Clothes have always been a marker of the era and
+          we are in a revolution. Your fashion makes you been seen and heard
+          that way you are. So, celebrate the seasons new and exciting fashion
+          in your own way.
+        </p>
+        <button type="button" className="shop-now-button">
+          Shop Now
+        </button>
+      </div>
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
+        alt="dresses to be noticed"
+        className="home-desktop-img"
+      />
     </div>
-  </nav>
+  </>
 )
-export default Header
+
+export default Home
