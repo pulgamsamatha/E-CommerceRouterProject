@@ -1,19 +1,92 @@
-.cart-container{
+/* Header navigation container */
+.nav-header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 20px;
-  background-color: #f9f9f9; 
-  min-height: 85vh; 
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for the product image */
-.cart-img {
-  width: 40%;
-  max-width: 500px;
-  border-radius: 8px; 
-  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #e9f0fe; 
+/* Content within the navigation bar */
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
 
+/* Website logo styling */
+.website-logo {
+  width: 150px;
+}
+
+/* Navigation menu container */
+.nav-menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual navigation links */
+.nav-link {
+  text-decoration: none;
+  margin: 0 15px;
+  color: #495057;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #343a40;
+}
+
+/* Desktop logout button */
+.logout-desktop-btn {
+  display: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-desktop-btn:hover {
+  background-color: #c82333;
+}
+
+/* Mobile logout button */
+.logout-mobile-btn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logout-icon {
+  width: 20px;
+}
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  .logout-desktop-btn {
+    display: block;
+  }
+
+  .logout-mobile-btn {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex;
+  }
 }
