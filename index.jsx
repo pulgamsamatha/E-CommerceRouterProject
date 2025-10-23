@@ -1,35 +1,116 @@
-import Header from '../Header'
-import './index.css'
+import { Component } from "react";
+import { Navigate } from "react-router-dom"; // 01 use Navigate from react-router-dom
 
-const Home = () => (
-  <>
-    <Header />
-    <div className="home-container">
-      <div className="home-content">
-        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
-          alt="dresses to be noticed"
-          className="home-mobile-img"
+import "./index.css";
+
+class LoginForm extends Component {
+  state = {
+    username: "",
+    password: "",
+    redirect: false,
+  };
+
+  // onSubmitSuccess = () => {
+  //   const { history } = this.props;
+  //   history.replace("/");
+  // };
+
+  submitForm = (event) => {
+    event.preventDefault();
+    const { username, password } = this.state;
+    const userDetails = { username, password };
+    // const url = 'https://apis.ccbp.in/login'
+    // const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(userDetails),
+    // }
+    // const response = await fetch(url, options)
+    // const data = await response.json()
+    // if (response.ok === true) {
+    //   this.onSubmitSuccess()
+    // }
+
+    event.preventDefault();
+    localStorage.setItem("userData", JSON.stringify(userDetails));
+    this.setState({ redirect: true });
+  };
+
+  onChangeUsername = (event) => {
+    this.setState({ username: event.target.value });
+  };
+
+  onChangePassword = (event) => {
+    this.setState({ password: event.target.value });
+  };
+
+  renderPasswordField = () => {
+    const { password } = this.state;
+    return (
+      <>
+        <label className="input-label" htmlFor="password">
+          PASSWORD
+        </label>
+        <input
+          type="password"
+          id="password"
+          className="password-input-filed"
+          value={password}
+          onChange={this.onChangePassword}
         />
-        <p className="home-description">
-          Fashion is part of the daily air and it does not quite help that it
-          changes all the time. Clothes have always been a marker of the era and
-          we are in a revolution. Your fashion makes you been seen and heard
-          that way you are. So, celebrate the seasons new and exciting fashion
-          in your own way.
-        </p>
-        <button type="button" className="shop-now-button">
-          Shop Now
-        </button>
-      </div>
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
-        alt="dresses to be noticed"
-        className="home-desktop-img"
-      />
-    </div>
-  </>
-)
+      </>
+    );
+  };
 
-export default Home
+  renderUsernameField = () => {
+    const { username } = this.state;
+    return (
+      <>
+        <label className="input-label" htmlFor="username">
+          USERNAME
+        </label>
+        <input
+          type="text"
+          id="username"
+          className="username-input-filed"
+          value={username}
+          onChange={this.onChangeUsername}
+        />
+      </>
+    );
+  };
+
+  render() {
+    if (this.state.redirect) {
+      return <Navigate to="/home" />;
+    }
+
+    return (
+      <div className="login-form-container">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+          className="login-website-logo-mobile-image"
+          alt="website logo"
+        />
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+          className="login-image"
+          alt="website login"
+        />
+        <form className="form-container" onSubmit={this.submitForm}>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            className="login-website-logo-desktop-image"
+            alt="website logo"
+          />
+          <div className="input-container">{this.renderUsernameField()}</div>
+          <div className="input-container">{this.renderPasswordField()}</div>
+          <button type="submit" className="login-button">
+            Login
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
+
+export default LoginForm;
