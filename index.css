@@ -1,105 +1,99 @@
-/* Home Container */
-.home-container {
+/* Container for the entire login form */
+.login-form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
   padding: 20px;
-  background-color: #f9fafb;
-  height: 85vh;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media screen and (min-width: 768px) {
-  .home-container {
-    display: flex;
-    flex-direction: row;
-    justify-self: center;
-    align-items: center;
-  }
-}
-
-/* Home Content */
-.home-content {
-  text-align: center;
+/* Logo for mobile view */
+.login-website-logo-mobile-image {
+  width: 150px;
   margin-bottom: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .home-content {
-    text-align: left;
-    margin-right: 40px;
-  }
-}
-
-/* Home Heading */
-.home-heading {
-  font-size: 24px;
-  font-weight: bold;
-  color: #1a202c;
-  margin-bottom: 15px;
-}
-
-@media screen and (min-width: 768px) {
-  .home-heading {
-    font-size: 36px;
-  }
-}
-
-/* Home Mobile Image */
-.home-mobile-img {
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 15px;
-  display: block;
-}
-
-@media screen and (min-width: 768px) {
-  .home-mobile-img {
-    display: none;
-  }
-}
-
-/* Home Desktop Image */
-.home-desktop-img {
-  width: 100%;
-  max-width: 400px;
   display: none;
 }
 
-@media screen and (min-width: 768px) {
-  .home-desktop-img {
-    display: block;
-  }
-}
-
-/* Home Description */
-.home-description {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #4a5568;
+/* Logo for desktop view */
+.login-website-logo-desktop-image {
+  width: 180px;
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 768px) {
-  .home-description {
-    font-size: 18px;
-  }
+/* Login form image */
+.login-image {
+  width: 300px;
+  margin-bottom: 30px;
 }
 
-/* Shop Now Button */
-.shop-now-button {
+/* Form container */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input container */
+.input-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label styling */
+.input-label {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+/* Username input field */
+.username-input-filed {
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Password input field */
+.password-input-filed {
+  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+/* Login button styling */
+.login-button {
   font-size: 16px;
-  font-weight: bold;
-  padding: 12px 20px;
+  padding: 12px;
   background-color: #4caf50;
   color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.shop-now-button:hover {
+.login-button:hover {
   background-color: #45a049;
+}
+
+/* Responsive styles for smaller devices */
+@media screen and (max-width: 768px) {
+  .login-image {
+    width: 80%;
+  }
+
+  .login-website-logo-mobile-image {
+    display: block;
+  }
+
+  .login-website-logo-desktop-image {
+    display: none;
+  }
 }
