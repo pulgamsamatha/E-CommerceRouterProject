@@ -1,99 +1,19 @@
-/* Container for the entire login form */
-.login-form-container {
+.not-found-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f5f5f5;
   padding: 20px;
+  background-color: #f9f9f9; 
+  min-height: 85vh; 
 }
 
-/* Logo for mobile view */
-.login-website-logo-mobile-image {
-  width: 150px;
-  margin-bottom: 20px;
-  display: none;
-}
+/* Styles for the product image */
+.not-found-img {
+  width: 40%;
+  max-width: 500px;
+  border-radius: 8px; 
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e9f0fe; 
 
-/* Logo for desktop view */
-.login-website-logo-desktop-image {
-  width: 180px;
-  margin-bottom: 20px;
-}
-
-/* Login form image */
-.login-image {
-  width: 300px;
-  margin-bottom: 30px;
-}
-
-/* Form container */
-.form-container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
-
-/* Input container */
-.input-container {
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Label styling */
-.input-label {
-  font-size: 14px;
-  color: #333333;
-  margin-bottom: 8px;
-}
-
-/* Username input field */
-.username-input-filed {
-  font-size: 14px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-
-/* Password input field */
-.password-input-filed {
-  font-size: 14px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-
-/* Login button styling */
-.login-button {
-  font-size: 16px;
-  padding: 12px;
-  background-color: #4caf50;
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  background-color: #45a049;
-}
-
-/* Responsive styles for smaller devices */
-@media screen and (max-width: 768px) {
-  .login-image {
-    width: 80%;
-  }
-
-  .login-website-logo-mobile-image {
-    display: block;
-  }
-
-  .login-website-logo-desktop-image {
-    display: none;
-  }
 }
